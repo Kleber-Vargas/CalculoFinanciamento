@@ -1,4 +1,4 @@
-# CalculoFinanciamento
+# Cálculo Financiamento
 Aplicação de Console para Cálculo de Financiamneto nas modalidades SAC E Price.
 
 Escolha entre as opções (1) para SAC - (2) para Price; Digite o valor do Financiamento; Digite o valor da Entrada; Digite a quantidade de Parcelas; Escolhe entre as opções (1) para taxa anual - (2) para taxa mensal; Digite a taxa de juros;
