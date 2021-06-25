@@ -11,11 +11,11 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("CalculoFinanciamento")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Particular")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("CalculoFinanciamento")]
+[assembly: System.Reflection.AssemblyProductAttribute("Cálculo Financiamento")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CalculoFinanciamento")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 

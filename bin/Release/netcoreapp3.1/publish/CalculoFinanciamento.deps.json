@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "CalculoFinanciamento/1.0.0": {
+        "runtime": {
+          "CalculoFinanciamento.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CalculoFinanciamento/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

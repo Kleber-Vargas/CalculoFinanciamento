@@ -137,27 +137,27 @@ namespace CalculoFinanciamento
         }
         private static void preencherTabela(string[,] table, DateTime Data, int x, double prestacao, double amortizacao, double juros, double saldoDevedor)
         {
-            table[x, 0] = x.ToString("00") + "        ";
-            table[x, 1] = "R$ " + prestacao.ToString("#,#00.00") + "        ";
-            table[x, 2] = "R$ " + amortizacao.ToString("#,#00.00") + "      ";
-            table[x, 3] = "R$ " + juros.ToString("#,#00.00") + "     ";
-            table[x, 4] = "R$ " + saldoDevedor.ToString("#,#00.00") + "     ";
+            table[x, 0] = x.ToString("00") + "\t";
+            table[x, 1] = "R$ " + prestacao.ToString("#,#00.00") + "\t";
+            table[x, 2] = "R$ " + amortizacao.ToString("#,#00.00") + "\t";
+            table[x, 3] = "R$ " + juros.ToString("#,#00.00") + "\t";
+            table[x, 4] = "R$ " + saldoDevedor.ToString("#,#00.00") + "\t";
             table[x, 5] = Data.AddMonths(x).ToString("dd/MM/yyyy");
         }
 
         private static void preencherCabecalhoRodape(string[,] table, int ln, double totalParcela, double totalAmortizacao, double totalJuros)
         {
             ln -= 1;
-            table[0, 0] = "Parcela   ";
-            table[0, 1] = "Prestação          ";
-            table[0, 2] = "Amortização    ";
-            table[0, 3] = "Juros           ";
-            table[0, 4] = "Saldo Devedor     ";
+            table[0, 0] = "Parcela";
+            table[0, 1] = " Prestação\t";
+            table[0, 2] = "Amortização\t";
+            table[0, 3] = "Juros\t\t";
+            table[0, 4] = "Saldo\t\t";
             table[0, 5] = "Data Vencimento";
-            table[ln, 0] = "Total      ";
-            table[ln, 1] = "R$ " + totalParcela.ToString("#,#00.00") + "     ";
-            table[ln, 2] = "R$ " + totalAmortizacao.ToString("#.#00.00") + "   ";
-            table[ln, 3] = "R$ " + totalJuros.ToString("#,#00.00") + "  ";
+            table[ln, 0] = "Total =>";
+            table[ln, 1] = "R$ " + totalParcela.ToString("#,#00.00") + "\t";
+            table[ln, 2] = "R$ " + totalAmortizacao.ToString("#,#00.00") + "\t";
+            table[ln, 3] = "R$ " + totalJuros.ToString("#,#00.00") + "\t";
             table[ln, 4] = "R$ 0,00";
             table[ln, 5] = "";
         }
@@ -167,12 +167,15 @@ namespace CalculoFinanciamento
             Console.WriteLine("");
             for (int a = 0; a < table.GetLength(0); a++)
             {
-                Console.WriteLine(table[a, 0] + table[a, 1] + table[a, 2] + table[a, 3] + table[a, 4] + table[a, 5]);
+                Console.WriteLine($"{table[a, 0]}  {table[a, 1]}  {table[a, 2]}  {table[a, 3]}  {table[a, 4]}  {table[a, 5]}");
             }
         }
 
         private static string TipoCalculoFin()
         {
+            totalAmortizacao = 0;
+            totalJuros = 0;
+            totalParcela = 0;
             Console.WriteLine("Digite: 1 - Para cálculo SAC");
             Console.WriteLine("Digite: 2 - Para cálculo Price");
             Console.WriteLine("Digite: X - Para Sair");

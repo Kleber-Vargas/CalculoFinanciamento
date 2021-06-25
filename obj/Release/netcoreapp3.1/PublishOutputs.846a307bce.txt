@@ -1,0 +1,5 @@
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\bin\Release\netcoreapp3.1\publish\CalculoFinanciamento.exe
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\bin\Release\netcoreapp3.1\publish\CalculoFinanciamento.dll
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\bin\Release\netcoreapp3.1\publish\CalculoFinanciamento.deps.json
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\bin\Release\netcoreapp3.1\publish\CalculoFinanciamento.runtimeconfig.json
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\bin\Release\netcoreapp3.1\publish\CalculoFinanciamento.pdb

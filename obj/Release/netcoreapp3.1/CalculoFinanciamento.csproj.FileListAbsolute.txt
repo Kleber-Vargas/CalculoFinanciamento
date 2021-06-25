@@ -1,0 +1,13 @@
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\bin\Release\netcoreapp3.1\CalculoFinanciamento.exe
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\bin\Release\netcoreapp3.1\CalculoFinanciamento.deps.json
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\bin\Release\netcoreapp3.1\CalculoFinanciamento.runtimeconfig.json
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\bin\Release\netcoreapp3.1\CalculoFinanciamento.runtimeconfig.dev.json
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\bin\Release\netcoreapp3.1\CalculoFinanciamento.dll
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\bin\Release\netcoreapp3.1\CalculoFinanciamento.pdb
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\obj\Release\netcoreapp3.1\CalculoFinanciamento.csproj.AssemblyReference.cache
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\obj\Release\netcoreapp3.1\CalculoFinanciamento.AssemblyInfoInputs.cache
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\obj\Release\netcoreapp3.1\CalculoFinanciamento.AssemblyInfo.cs
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\obj\Release\netcoreapp3.1\CalculoFinanciamento.csproj.CoreCompileInputs.cache
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\obj\Release\netcoreapp3.1\CalculoFinanciamento.dll
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\obj\Release\netcoreapp3.1\CalculoFinanciamento.pdb
+C:\Users\klebe\Desktop\Exercícios C#\CalculoFinanciamento\obj\Release\netcoreapp3.1\CalculoFinanciamento.genruntimeconfig.cache
