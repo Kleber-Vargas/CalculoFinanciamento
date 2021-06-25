@@ -5,4 +5,4 @@ Escolha entre as opções (1) para SAC - (2) para Price; Digite o valor do Finan
 
 Pronto! Sua simulação será impressa na tela contendo o valor da prestação, o valor da amortização, o valor do juros, o saldo devedor e a data para pagamento de cada parcela. Ao final, a totalização desses valores.
 
-![image](https://user-images.githubusercontent.com/77005368/123471292-f0cd5d00-d5cb-11eb-88ad-0a5227317659.png)
+![image](https://user-images.githubusercontent.com/77005368/123486727-fa15f400-d5e2-11eb-9a76-6b1b58bbaa61.png)
