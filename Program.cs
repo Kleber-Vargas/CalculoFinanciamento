@@ -1,4 +1,4 @@
-﻿//Por Kleber Vargas
+//Por Kleber Vargas
 using System;
 
 namespace CalculoFinanciamento
@@ -20,7 +20,6 @@ namespace CalculoFinanciamento
                 Console.WriteLine("");
                 iniciarFinanciamento();
         }
-
         private static void iniciarFinanciamento()
         {
             string resposta = TipoCalculoFin();
@@ -41,19 +40,25 @@ namespace CalculoFinanciamento
                 Console.Write("Digite a taxa de juros: ");
                 double taxaJuros = double.Parse(Console.ReadLine());
 
+                valorFinanciamento -= valorEntrada;
+                futureValue = valorFinanciamento;
+                taxaJuros /= 100;
+                taxaJuros = taxaAM == 1 ? (Math.Pow(1 + taxaJuros, 1.0 / 12) - 1) : taxaJuros;
+                int ln = numParcelas + 2;
+                string[,] table = new string[ln, 6];
+
                 if (resposta == "1")
                 {
                     Console.WriteLine();
                     Console.WriteLine(" -- Cálculo Método SAC --");
-                    calcularSac(valorFinanciamento, valorEntrada, numParcelas, taxaAM, taxaJuros);
+                    CalcularSac(valorFinanciamento, numParcelas, taxaJuros, table, ln);
                 }
                 else
                 {
                     Console.WriteLine();
                     Console.WriteLine(" -- Cálculo Método PRICE --");
-                    calcularPrice(valorFinanciamento, valorEntrada, numParcelas, taxaAM, taxaJuros);
+                    CalcularPrice(numParcelas, taxaJuros, table, ln);
                 }
-
                 Console.WriteLine("");
                 Console.Write("Deseja reafazer a simulação? (S)im ou (N)ão :");
                 resposta = Console.ReadLine();
@@ -62,61 +67,29 @@ namespace CalculoFinanciamento
                     Console.WriteLine();
                     iniciarFinanciamento();
                 }
-                else
-                {
-                    Console.WriteLine();
-                    Console.WriteLine("Obrigado por usar o simulador de Financiamento!");
-                }
-
             }
-            
+            Console.WriteLine();
+            Console.WriteLine("Obrigado por usar o simulador de Financiamento!");
         }
-
-        private static void calcularSac(double valorFinanciamento, double valorEntrada, int numParcelas, int taxaAM, double taxaJuros)
+        private static void CalcularSac(double valorFinanciamento, int numParcelas, double taxaJuros, string[,] table, int ln)
         {
-            valorFinanciamento -= valorEntrada;
-            futureValue = valorFinanciamento;
-            taxaJuros /= 100;
-            
-            double x1 =  1 + taxaJuros;
-            double y1 = 1.0 / 12;
-            if (taxaAM == 1) { taxaJuros = (Math.Pow(x1, y1)-1)  ; }
-            int ln = numParcelas + 2;
-
-            string[,] table = new string[ln, 6];
-            
             for (int x = 1; x <= numParcelas; x++)
             {
                 juros = futureValue * (taxaJuros);
                 amortizacao = valorFinanciamento / numParcelas;
                 prestacao = juros + amortizacao;
                 saldoDevedor = futureValue - amortizacao;
-
                 totalParcela += prestacao;
                 totalAmortizacao += amortizacao;
                 totalJuros += juros;
                 preencherTabela(table, Data, x, prestacao, amortizacao, juros, saldoDevedor);
-                
                 futureValue -= amortizacao;
             }
             preencherCabecalhoRodape(table, ln, totalParcela, totalAmortizacao, totalJuros);
             printFinanciamento(table);
-
         }
-
-        private static void calcularPrice(double valorFinanciamento, double valorEntrada, int numParcelas, int taxaAM, double taxaJuros)
+        private static void CalcularPrice( int numParcelas, double taxaJuros, string [,] table, int ln)
         {
-            valorFinanciamento -= valorEntrada;
-            futureValue = valorFinanciamento;
-            taxaJuros /= 100;
-            
-            double x1 = 1 + taxaJuros;
-            double y1 = 1.0 / 12;
-            if (taxaAM == 1) { taxaJuros = (Math.Pow(x1, y1) - 1); }
-            int ln = numParcelas + 2;
-
-            string[,] table = new string[ln, 6];
-                        
             double x2 = Math.Pow(1 + taxaJuros, numParcelas);
             prestacao = (futureValue * (x2 * taxaJuros) / (x2 - 1));
 
@@ -128,7 +101,6 @@ namespace CalculoFinanciamento
                 totalParcela += prestacao;
                 totalAmortizacao += amortizacao;
                 totalJuros += juros;
-
                 preencherTabela(table, Data, x, prestacao, amortizacao, juros, saldoDevedor);
                 futureValue -= amortizacao;
             }
@@ -144,7 +116,6 @@ namespace CalculoFinanciamento
             table[x, 4] = "R$ " + saldoDevedor.ToString("#,#00.00") + "\t";
             table[x, 5] = Data.AddMonths(x).ToString("dd/MM/yyyy");
         }
-
         private static void preencherCabecalhoRodape(string[,] table, int ln, double totalParcela, double totalAmortizacao, double totalJuros)
         {
             ln -= 1;
@@ -161,7 +132,6 @@ namespace CalculoFinanciamento
             table[ln, 4] = "R$ 0,00";
             table[ln, 5] = "";
         }
-
         private static void printFinanciamento(string[,] table)
         {
             Console.WriteLine("");
@@ -170,7 +140,6 @@ namespace CalculoFinanciamento
                 Console.WriteLine($"{table[a, 0]}  {table[a, 1]}  {table[a, 2]}  {table[a, 3]}  {table[a, 4]}  {table[a, 5]}");
             }
         }
-
         private static string TipoCalculoFin()
         {
             totalAmortizacao = 0;
@@ -180,11 +149,7 @@ namespace CalculoFinanciamento
             Console.WriteLine("Digite: 2 - Para cálculo Price");
             Console.WriteLine("Digite: X - Para Sair");
             string tipoCalculo = Console.ReadLine();
-            if (tipoCalculo.ToUpper() == "X")
-            {
-                return tipoCalculo;
-            }
-            else if (int.Parse(tipoCalculo) == 1 || int.Parse(tipoCalculo) == 2)
+            if (tipoCalculo.ToUpper() == "X" || int.Parse(tipoCalculo) == 1 || int.Parse(tipoCalculo) == 2)
             {
                 return tipoCalculo;
             }
